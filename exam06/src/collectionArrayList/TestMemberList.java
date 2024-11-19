@@ -17,6 +17,7 @@ public class TestMemberList {
 		
 		list.showAllMember();
 		
+		
 		list.removeMember(Lee.getMemberId());
 		list.removeMember(Kim.getName());
 		list.showAllMember();

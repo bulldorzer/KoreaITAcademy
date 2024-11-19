@@ -30,7 +30,7 @@ public class MemberArrayList {
 			Member member = ir.next(); // 요소값 저장
 			int currentId = member.getMemberId();
 			if (currentId == memberId) {
-				list.remove(memberId);
+				list.remove(member);
 				return true;
 			}
 		}
@@ -39,6 +39,26 @@ public class MemberArrayList {
 		return false;
 		
 	}
+	
+//	public boolean removeMember(int memberId) { // 고유값
+//
+//		// 객체 생성
+//		Iterator<Member> ir = list.iterator();
+//
+//		while( ir.hasNext() ) {
+//			Member member = ir.next(); // 요소값 저장
+//			int curruntId = member.getMemberId();
+//
+//			if(curruntId == memberId) {
+//				list.remove(member); // 해당 객체와 일치하는 멤버 전체 삭제
+//				return true;
+//			}
+//		}
+//		// 실패 - for 가 끝날때 까지 return 이 안된경우
+//		System.out.println(memberId + "가 존재하지 않습니다"); 
+//		return false;       
+//
+//	}
 	
 	// 삭제 - 삭제할 멤버아이디
 		public boolean removeMember(String memberName) {
