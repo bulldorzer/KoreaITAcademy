@@ -2,7 +2,7 @@ package score;
 
 public class TestData {
 
-	School koreaSchool = School.getIntance();
+	School koreaSchool = School.getInstance();
 	// 과목추가
 	Subject korea; // 이거 오류
 	Subject math;
@@ -16,20 +16,21 @@ public class TestData {
 
 	public void createStudent() {
 
-		// 학생 객체 생성 - 학번, 이름, 전공과목
+		// 학생 객체 생성 - 학번, 이름, 전공과목(subject)
 		Student student1 = new Student(211213, "강감찬", korea);
 		Student student2 = new Student(211213, "김유신", math);
 		Student student3 = new Student(211213, "신사임당", korea);
 		Student student4 = new Student(211213, "이순신", korea);
 		Student student5 = new Student(211213, "홍길동", math);
 
-//			학교에 학생 추가
+//		학교에 학생목록에 학생추가
 		koreaSchool.addStudent(student1);
 		koreaSchool.addStudent(student2);
 		koreaSchool.addStudent(student3);
 		koreaSchool.addStudent(student4);
 		koreaSchool.addStudent(student5);
 
+		// 학교에 과목목록에 과목추가
 		koreaSchool.addSubject(korea);
 		koreaSchool.addSubject(math);
 		koreaSchool.addSubject(dance);
@@ -42,6 +43,7 @@ public class TestData {
 		korea.register(student3);
 		korea.register(student4);
 		korea.register(student5);
+
 		// 전공과목 수학 -> SAB 점수 적용
 		// 전공과목이 수학가 아닌경우 -> AB 점수적용
 		math.register(student1);
@@ -54,6 +56,7 @@ public class TestData {
 		dance.register(student2);
 		dance.register(student3);
 
+		// 학생들 과목 점수 추가
 		addScoreForStudent(student1, korea, 95);
 		addScoreForStudent(student1, math, 56);
 		addScoreForStudent(student1, dance, 76);

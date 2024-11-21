@@ -7,6 +7,7 @@ public class MajorGradeType implements GradeType { // 문제
 	@Override
 	public String getGrade(int point) {
 		// 95 S 90이상 A 80이상B 70이상 C 60이상 D 나머지 F
+//		switch 구문을 통해 점수등급을 매겨라 S부분은 삼항연산자로 할것
 //		int score = (int) Math.floor(point / 10);
 //		String grade = switch (score) {
 //		case 9 -> (point >= 95) ? "S" : "A";

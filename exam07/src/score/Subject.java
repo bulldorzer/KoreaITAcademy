@@ -9,20 +9,23 @@ public class Subject {
 
 	// 과목이 학생 목록을 가지고 있다. = 과목별로 수강 신청한 학생의 목록을 가지고 있다.
 	// 과목별 수강신청목록
-	private ArrayList<Student> studentList; // 문제
+	private ArrayList<Student> studentList;
 
+	// 기본 생성자
 	public Subject() {
-		super();
 	}
 
+	// Subject 생성자에 과목아이디와 과목명을 받아 매핑하고
+	// 등급채점방식을 A~F타입으로 초기화
+	// 학생목록을 만든다
 	public Subject(int subjectId, String subjectName) {
-		super();
 		this.subjectId = subjectId;
 		this.subjectName = subjectName;
-		this.gradeType = Define.AB_TYPE; // 기본값 A~F제도
-		studentList = new ArrayList<Student>(); // 문제
+		gradeType = Define.AB_TYPE;
+		studentList = new ArrayList<Student>();
 	}
 
+	// getter.setter
 	public int getSubjectId() {
 		return subjectId;
 	}
@@ -55,16 +58,17 @@ public class Subject {
 		this.studentList = studentList;
 	}
 
+	// toString 오버라이딩
 	@Override
 	public String toString() {
-		return "Subject [subjectId=" + subjectId + ", subjectName=" + subjectName + ", gradeType=" + gradeType
-				+ ", studentList=" + studentList + "]";
+		return "subjectId" + subjectId + "subjectName" + subjectName;
 	}
 
 	// 수강 신청했다 = Subject 클래스의 studentList에 추가되었다
 	// 학생 객체를 받아와서 studentList에 추가하는 메서드 작성하시오
-
+	// 학생등록 메소드 register
 	public void register(Student student) {
 		studentList.add(student);
 	}
+
 }
